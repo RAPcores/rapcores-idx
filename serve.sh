@@ -2,4 +2,6 @@
 
 julia setup.jl
 
-jupyter notebook --NotebookApp.allow_remote_access=true
+ipadr=$(hostname -I | awk '{print $1}')
+
+jupyter notebook --NotebookApp.allow_remote_access=true --NotebookApp.ip=$ipadr
